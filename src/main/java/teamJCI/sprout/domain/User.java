@@ -17,8 +17,8 @@ public class User {
     @Column(name = "user_id")
     private Long id;
 
-    private String username;
     private String password;
+    private String username;
 
     @OneToMany(mappedBy = "user")
     private List<Content> contents = new ArrayList<>();
