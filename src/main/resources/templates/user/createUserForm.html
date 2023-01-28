@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판</title>
+    <nav>
+        회원가입
+    </nav>
+    <div align="left">
+        <br/>
+        <button style="height: 40px; background-color: greenyellow;"
+                onclick="location.href='/'"> 홈페이지 </button>
+    </div>
+</head>
+<body>
+<br/>
+<div align="center">
+    <div class="container" align="center">
+        <form action="/user/signup" method="post" th:object="${userForm}">
+            <div class="form-group">
+                <br/><br/>
+                <label th:for="username"> 유저ID : </label>
+                <input type="text" th:field="*{username}" placeholder="유저ID를 입력하세요."
+        th:style="${#fields.hasErrors('username')}? 'boarder-color:red;'">
+                <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" style="padding: unset;"> Incorrect data</p>
+                <div th:if="!${#fields.hasErrors('username')}"><br/><br/></div>
+                <label th:for="password"> 비밀번호: </label>
+                <input type="text" th:field="*{password}" placeholder="비밀번호를 입력하세요."
+       th:style="${#fields.hasErrors('password')}? 'boarder-color:red;'">
+                <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="padding: unset;">Incorrect date</p>
+                <div th:if="!${#fields.hasErrors('password')}"><br/><br/></div>
+            </div>
+            <button type="submit" style="height: 40px;">가입</button>
+            <br/><br/><br/>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
