@@ -19,12 +19,12 @@ public class Content {
     private String title;
     private LocalDateTime uploadDate;
 
-    @Enumerated(EnumType.STRING)
-    private VisibleStatus status;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
+    @Enumerated(EnumType.STRING)
+    private VisibleStatus status;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
