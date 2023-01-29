@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <title> 게시판 </title>
     <nav th:text="${name}"/>
-    <div align="right">
+    <div align="left">
         <br/>
         <button style="height: 40px; background-color: greenyellow;"
                 onclick="location.href='/'"> 홈으로 </button>
     </div>
 </head>
+
+
 <body>
 <br/>
 <div align="center">
@@ -22,7 +24,8 @@
                 <th width="350px;"> 제목 </th>
                 <th width="100px;"> 날짜 </th>
                 <th width="100px;"> 작성글보기 </th>
-                <th width="100px;"> 댓글 보기 </th>
+                <th width="100px;"> 댓글 쓰기 </th>
+
             </tr>
             </thead>
             <tbody align="center">
@@ -34,7 +37,11 @@
                 <td th:text="${content.uploadDate}"></td>
                 <td><button th:onclick="|location.href='@{/content/edit/}' + ${content.id}|"> 보기 </button> </td>
             </tr>
+
+
             </tbody>
+
+
         </table>
     </div>
 </div>
