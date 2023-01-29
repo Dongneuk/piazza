@@ -37,6 +37,4 @@ public class Comment {
 
     @CreationTimestamp
     private Timestamp timestamp;
-
-
 }
