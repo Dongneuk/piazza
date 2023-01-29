@@ -2,6 +2,7 @@ package teamJCI.sprout.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import teamJCI.sprout.domain.reply.Comment;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -22,4 +23,7 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<Content> contents = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user")
+    private List<Comment> comments;
 }

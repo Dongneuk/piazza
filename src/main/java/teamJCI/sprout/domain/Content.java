@@ -2,9 +2,12 @@ package teamJCI.sprout.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import teamJCI.sprout.domain.reply.Comment;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -13,6 +16,7 @@ public class Content {
 
     @Id
     @GeneratedValue
+    @Column(name = "content_id")
     private Long id;
 
     private String text;
@@ -29,6 +33,12 @@ public class Content {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
+
+
+    @OneToMany(mappedBy = "content")
+    private List<Comment> comments;
+
+
 
     public void setUser(User user) {
         this.user = user;
