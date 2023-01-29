@@ -1,7 +1,9 @@
 package teamJCI.sprout.domain;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import teamJCI.sprout.domain.reply.Comment;
 
 import javax.persistence.*;
@@ -11,6 +13,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@Data
 public class User {
 
     @Id
