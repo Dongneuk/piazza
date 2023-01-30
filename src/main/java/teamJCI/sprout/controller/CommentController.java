@@ -31,7 +31,7 @@ public class CommentController {
 
     @PostMapping("/content/comment")
     public void commentWrite(@RequestBody CommentResponse commentResponse) {
-        System.out.println(commentResponse.getUserId() + " " + commentResponse.getContentId());
+//        System.out.println(commentResponse.getUserId() + " " + commentResponse.getContentId());
         Comment comment = new Comment();
 
         comment.setUser(userRepository.findById(commentResponse.getUserId()));
