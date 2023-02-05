@@ -41,10 +41,5 @@ public class CommentController {
 //        commentService.commentWrite(contentId, comment, user);
     }
 
-//    @PostMapping("/comment_delete")
-//    private String commentDelete(@ModelAttribute Comment comment) {
-//
-//        return CommentService.commentDelete(comment);
-//    }
 
 }
